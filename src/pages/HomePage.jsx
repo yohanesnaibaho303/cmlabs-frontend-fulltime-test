@@ -1,29 +1,27 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import { Col, Container, Row } from "react-bootstrap";
 import HeroImage from "/assets/hero.png";
-
 import "./pages.css";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
-  //   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // setLoading(true);
-    axios
-      .get("https://www.themealdb.com/api/json/v1/1/categories.php")
-      .then((response) => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get(
+          "https://www.themealdb.com/api/json/v1/1/categories.php"
+        );
         setCategories(response.data.categories || []);
-        // setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        // setLoading(false);
-      });
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    fetchCategories();
   }, []);
 
   return (
@@ -41,12 +39,9 @@ const HomePage = () => {
                 foods can be a real pleasure and something that makes life truly
                 feel worthwhile.
               </p>
-
               <button
                 className="btn btn-outline-dark btn-lg rounded-1 mb-xs-0 mb-2"
-                onClick={() => {
-                  navigate("/ingredients");
-                }}
+                onClick={() => navigate("/ingredients")}
               >
                 Find Recipes
               </button>
@@ -56,12 +51,12 @@ const HomePage = () => {
                 src={HeroImage}
                 alt="hero-img"
                 style={{ maxWidth: "940px" }}
-                // className="animate__animated animate__fadeInUp"
               />
             </Col>
           </Row>
         </Container>
       </header>
+
       <div className="category w-100 min-vh-100 pt-6 ">
         <Row>
           <Col>
@@ -73,29 +68,29 @@ const HomePage = () => {
         </Row>
 
         <Row className="content d-flex flex-row mt-5 gap-3">
-          {categories.map((category) => {
-            return (
-              <div className="card-ingredients" key={category.idCategory}>
-                <img
-                  src={category.strCategoryThumb}
-                  alt={category.strCategory}
-                />
-                <div className="overlay-img"></div>
-                <span
-                  style={{ textShadow: "1px 1px 1px #fff" }}
-                  className="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-black text-center"
-                >
-                  {category.strCategory}
-                </span>
-              </div>
-            );
-          })}
+          {categories.map((category) => (
+            <div
+              className="card-ingredients"
+              key={category.idCategory}
+              onClick={() => navigate(`/categories/${category.strCategory}`)}
+            >
+              <img src={category.strCategoryThumb} alt={category.strCategory} />
+              <div className="overlay-img"></div>
+              <span
+                style={{ textShadow: "1px 1px 1px #fff" }}
+                className="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-black text-center"
+              >
+                {category.strCategory}
+              </span>
+            </div>
+          ))}
         </Row>
+
         <Row>
           <Col className="d-flex justify-content-center mt-5 mb-5">
             <button
               className="btn btn-success rounded-5 btn-lg"
-              onClick={() => navigate("/ingredients")}
+              onClick={() => navigate("/categories")}
             >
               See All Recipes {" > "}
             </button>
