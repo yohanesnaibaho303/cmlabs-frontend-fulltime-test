@@ -32,8 +32,8 @@ const NavBarComponent = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav className="fw-bold">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Ingredients</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/ingredients">Ingredients</Nav.Link>
             <Nav.Link href="#foods">Foods</Nav.Link>
             <Nav.Link href="#local">Local Culinary</Nav.Link>
           </Nav>

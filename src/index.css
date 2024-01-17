@@ -25,6 +25,7 @@ body {
   padding: 0;
 }
 
+/* Navbar Style */
 .navbar {
   width: 100%;
   z-index: 2;
@@ -39,3 +40,5 @@ body {
 
   border-bottom: 2px solid #dc354638;
 }
+
+/* End of navbar  */
