@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { Col, Container, Row } from "react-bootstrap";
-import HeroImage from "../../public/assets/hero.png";
+import HeroImage from "/assets/hero.png";
 
-import "../pages/HomePage.css";
+import "./pages.css";
 
 const HomePage = () => {
   const navigate = useNavigate();

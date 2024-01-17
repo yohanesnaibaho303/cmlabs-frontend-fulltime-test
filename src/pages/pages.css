@@ -104,3 +104,25 @@ header {
   cursor: pointer;
   transform: scale(1.1);
 }
+
+.search {
+  width: 70%;
+  height: 50px;
+  border: 1px solid #e7b10a;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.search input {
+  border: none !important;
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+}
+.search input:focus {
+  outline: none;
+}
+
+.delete-search:hover {
+  cursor: pointer;
+}

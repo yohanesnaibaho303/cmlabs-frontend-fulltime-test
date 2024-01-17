@@ -1,0 +1,33 @@
+.detail-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.content-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 40%;
+}
+
+.content-right {
+  width: 48%;
+}
+
+.content-left img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .content-left {
+    width: 100%;
+  }
+  .content-right {
+    width: 100%;
+  }
+}
