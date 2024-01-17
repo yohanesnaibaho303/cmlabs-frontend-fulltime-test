@@ -14,7 +14,7 @@ function MealsFilter() {
 
   useEffect(() => {
     axios
-      .get("http://www.themealdb.com/api/json/v1/1/filter.php", {
+      .get("https://www.themealdb.com/api/json/v1/1/filter.php", {
         params: {
           i: ingredients,
         },
@@ -81,14 +81,14 @@ function MealsFilter() {
           return (
             <>
               <div
-                className="card-meal"
+                className="card-meal-list"
                 key={parseInt(item.idMeal)}
                 onClick={() =>
                   navigate("/meals/" + ingredients + "/" + item.idMeal)
                 }
               >
                 <img src={item.strMealThumb} alt={item.idMeal} />
-                <div className="overlay-img"></div>
+                <div className="overlay-img-list"></div>
                 <span className="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-white text-center">
                   {item.strMeal}
                 </span>
@@ -104,12 +104,6 @@ function MealsFilter() {
             <h4 className="fw-bold">no search results</h4>
           </>
         )}
-      </div>
-      <div className="d-flex justify-content-center mt-5 mb-5">
-        <span className="fs-4">
-          There are <span className="fw-bold">{Meals?.length}</span> Meals with{" "}
-          {ingredients} Ingredients
-        </span>
       </div>
     </div>
   );

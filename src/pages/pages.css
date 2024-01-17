@@ -82,11 +82,10 @@ header {
   height: 150px;
   overflow: hidden;
   border-radius: 20px;
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 40px;
   position: relative;
   transition: transform 220ms ease;
 }
+
 .content .card-ingredients img {
   width: 300px;
   height: 150px;
@@ -98,11 +97,31 @@ header {
   height: 150px;
   background-color: rgba(32, 32, 32, 0.116);
   position: absolute;
+  border-radius: 20px;
 }
 
 .content .card-ingredients:hover {
+  transform: scale(0.9);
+}
+
+.content .card-ingredients-list {
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  transition: transform 220ms ease;
+}
+.content .card-ingredients-list img {
+  width: 300px;
+  height: 150px;
+  object-fit: scale-down;
+  position: absolute;
+}
+
+.content .card-ingredients-list:hover {
+  transform: scale(0.9);
   cursor: pointer;
-  transform: scale(1.1);
 }
 
 .search {

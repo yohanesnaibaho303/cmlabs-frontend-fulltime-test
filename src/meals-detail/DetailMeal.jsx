@@ -8,7 +8,6 @@ import "./DetailMeal.css";
 function DetailMeal() {
   const navigate = useNavigate();
   let { meal, ingredients } = useParams();
-
   const [detailMeals, setDetailMeals] = useState();
 
   const instruction = detailMeals?.strInstructions?.split(".");
@@ -17,7 +16,7 @@ function DetailMeal() {
 
   useEffect(() => {
     axios
-      .get("http://www.themealdb.com/api/json/v1/1/lookup.php", {
+      .get("https://www.themealdb.com/api/json/v1/1/lookup.php", {
         params: {
           i: meal,
         },
@@ -78,7 +77,6 @@ function DetailMeal() {
           <h4 className="mt-3">Tags :</h4>
           <div className="d-flex flex-row gap-2">
             {detailMeals?.strTags?.split(",").map((value) => (
-              // eslint-disable-next-line react/jsx-key
               <div className="badge bg-warning text-wrap p-2">
                 <span>{value}</span>
               </div>

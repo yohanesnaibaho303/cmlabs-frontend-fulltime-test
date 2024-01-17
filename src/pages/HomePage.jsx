@@ -42,7 +42,12 @@ const HomePage = () => {
                 feel worthwhile.
               </p>
 
-              <button className="btn btn-outline-dark btn-lg rounded-1 mb-xs-0 mb-2">
+              <button
+                className="btn btn-outline-dark btn-lg rounded-1 mb-xs-0 mb-2"
+                onClick={() => {
+                  navigate("/ingredients");
+                }}
+              >
                 Find Recipes
               </button>
             </Col>
@@ -50,6 +55,7 @@ const HomePage = () => {
               <img
                 src={HeroImage}
                 alt="hero-img"
+                style={{ maxWidth: "940px" }}
                 // className="animate__animated animate__fadeInUp"
               />
             </Col>
@@ -66,14 +72,10 @@ const HomePage = () => {
           </Col>
         </Row>
 
-        <Row className="d-flex flex-row mt-5 gap-3 content">
+        <Row className="content d-flex flex-row mt-5 gap-3">
           {categories.map((category) => {
             return (
-              <div
-                className="card-ingredients"
-                key={category.idCategory}
-                // onClick={() => navigate("/meals/" + item.strIngredient)}
-              >
+              <div className="card-ingredients" key={category.idCategory}>
                 <img
                   src={category.strCategoryThumb}
                   alt={category.strCategory}

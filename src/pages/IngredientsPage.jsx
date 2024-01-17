@@ -13,7 +13,7 @@ const IngredientsPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://www.themealdb.com/api/json/v1/1/list.php", {
+      .get("https://www.themealdb.com/api/json/v1/1/list.php", {
         params: {
           i: "list",
         },
@@ -72,7 +72,7 @@ const IngredientsPage = () => {
               return (
                 <>
                   <div
-                    className="card-ingredients"
+                    className="card-ingredients-list"
                     key={item.idIngredient}
                     onClick={() => navigate("/meals/" + item.strIngredient)}
                   >
