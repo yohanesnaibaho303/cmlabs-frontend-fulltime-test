@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import Loader from "../components/Loader";
 
 import "./pages.css";
+import SearchInput from "../components/SearchInput";
 
 const IngredientsPage = () => {
   const navigate = useNavigate();
@@ -71,23 +72,11 @@ const IngredientsPage = () => {
         </div>
 
         <div className="container mt-3 mb-5 position-relative search">
-          <div className="d-flex flex-row align-items-center justify-content-center">
-            <Icon icon="material-symbols:search-rounded" width="35" />
-            <input
-              type="text"
-              className="ms-3"
-              placeholder="Search Ingredients"
-              width={100}
-              value={searchIngredients}
-              onChange={handleSearchChange}
-            />
-            <Icon
-              icon="ph:x-bold"
-              width="20"
-              className="delete-search"
-              onClick={clearSearch}
-            />
-          </div>
+          <SearchInput
+            value={searchIngredients}
+            onChange={handleSearchChange}
+            onClear={clearSearch}
+          />
         </div>
       </div>
 
@@ -112,7 +101,9 @@ const IngredientsPage = () => {
             </div>
           ))}
           {filteredIngredients.length === 0 && (
-            <h4 className="fw-bold">No search results</h4>
+            <h6 className="fw-bold text-danger">
+              *No results found, please retype keywords correctly
+            </h6>
           )}
         </div>
       )}

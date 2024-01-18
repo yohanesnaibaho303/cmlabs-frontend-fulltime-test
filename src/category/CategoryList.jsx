@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { useNavigate, useParams } from "react-router";
 import Loader from "../components/Loader";
+import SearchInput from "../components/SearchInput";
 
 const CategoryList = () => {
   const navigate = useNavigate();
@@ -65,22 +66,11 @@ const CategoryList = () => {
         </div>
 
         <div className="container mt-3 mb-5 position-relative search">
-          <div className="d-flex flex-row align-items-center justify-content-center">
-            <Icon icon="material-symbols:search-rounded" width="35" />
-            <input
-              type="text"
-              className="ms-3"
-              placeholder="Search Meals"
-              value={searchMeal}
-              onChange={handleSearchChange}
-            />
-            <Icon
-              icon="ph:x-bold"
-              width="20"
-              className="delete-search"
-              onClick={clearSearch}
-            />
-          </div>
+          <SearchInput
+            value={searchMeal}
+            onChange={handleSearchChange}
+            onClear={clearSearch}
+          />
         </div>
       </div>
 
@@ -103,7 +93,9 @@ const CategoryList = () => {
               </div>
             ))
           ) : (
-            <h4 className="fw-bold">No search results</h4>
+            <h6 className="fw-bold text-danger">
+              *No results found, please retype keywords correctly
+            </h6>
           )}
         </div>
       )}
