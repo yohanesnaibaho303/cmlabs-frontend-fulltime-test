@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Icon } from "@iconify/react";
 import { useNavigate, useParams } from "react-router";
+
 import Loader from "../components/Loader";
 import SearchInput from "../components/SearchInput";
 
@@ -57,11 +57,11 @@ const CategoryList = () => {
       <div className="header-02 w-100 pb-1">
         <div className="container">
           <h3 className="text-center fw-bold" style={{ paddingTop: "96px" }}>
-            Foods with {categories} Ingredients
+            Foods with {categories} Category
           </h3>
           <p className="fs-5 text-center">
             There are <span className="fw-bold">{filteredMeals.length}</span>{" "}
-            Meals with {categories} Ingredients
+            Meals with {categories} Category
           </p>
         </div>
 

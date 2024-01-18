@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+
+import "./DetailMeal.css";
 import ReactPlayer from "react-player";
 import { Accordion } from "react-bootstrap";
-import "./DetailMeal.css";
 import Loader from "../components/Loader";
 
 function DetailMeal() {

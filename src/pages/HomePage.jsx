@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import "./pages.css";
 import { Col, Container, Row } from "react-bootstrap";
 import HeroImage from "/assets/hero.png";
-import "./pages.css";
 
 import Loader from "../components/Loader";
 import Category from "../category/Category";

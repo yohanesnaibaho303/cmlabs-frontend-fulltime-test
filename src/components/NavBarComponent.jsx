@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { Container, Nav, Navbar } from "react-bootstrap";
 
 const NavBarComponent = () => {
@@ -19,6 +18,10 @@ const NavBarComponent = () => {
     window.addEventListener("scroll", changeBackgroundColor);
   });
 
+  const handleDisabledLinkClick = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Navbar
       expand="lg"
@@ -34,8 +37,8 @@ const NavBarComponent = () => {
           <Nav className="fw-bold">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/ingredients">Ingredients</Nav.Link>
-            <Nav.Link href="#foods">Foods</Nav.Link>
-            <Nav.Link href="#local">Local Culinary</Nav.Link>
+            <Nav.Link>Foods</Nav.Link>
+            <Nav.Link>Local Culinary</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

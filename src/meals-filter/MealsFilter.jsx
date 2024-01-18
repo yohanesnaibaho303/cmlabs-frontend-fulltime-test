@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Icon } from "@iconify/react";
 import { useNavigate, useParams } from "react-router";
+
 import "./MealsFilter.css";
 import Loader from "../components/Loader";
 import SearchInput from "../components/SearchInput";

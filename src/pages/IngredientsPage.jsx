@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
-import { Icon } from "@iconify/react";
-import Loader from "../components/Loader";
 
 import "./pages.css";
+import Loader from "../components/Loader";
 import SearchInput from "../components/SearchInput";
 
 const IngredientsPage = () => {
@@ -66,7 +65,7 @@ const IngredientsPage = () => {
             There are <span className="fw-bold">{ingredients.length}</span>{" "}
             ingredients found
           </p>
-          <p className="text-center">
+          <p className="text-center text-secondary">
             Search for food or recipes based on keywords as you like.
           </p>
         </div>
