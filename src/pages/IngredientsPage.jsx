@@ -55,10 +55,10 @@ const IngredientsPage = () => {
   );
 
   return (
-    <div>
-      <header className="w-100 min-vh-100">
+    <div className="bg-light min-vh-100">
+      <div className="header-02 w-100 pb-1 px-3">
         <div className="container">
-          <h1 className="text-center fw-bold mt-5 pt-5">
+          <h1 className="text-center fw-bold" style={{ paddingTop: "96px" }}>
             Discover List of Ingredients
           </h1>
           <p className="fs-4 text-center  ">
@@ -89,33 +89,33 @@ const IngredientsPage = () => {
             />
           </div>
         </div>
+      </div>
 
-        {loading ? (
-          <Loader />
-        ) : (
-          <div className="container d-flex flex-row mt-5 gap-3 content pb-5">
-            {filteredIngredients.map((item) => (
-              <div
-                className="card-ingredients-list"
-                key={item.idIngredient}
-                onClick={() => handleIngredientClick(item)}
-              >
-                <img
-                  src={`https://themealdb.com/images/ingredients/${item.strIngredient}.png`}
-                  alt={item.strIngredient}
-                />
-                <div className="overlay-img"></div>
-                <span className="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-white text-center">
-                  {item.strIngredient}
-                </span>
-              </div>
-            ))}
-            {filteredIngredients.length === 0 && (
-              <h4 className="fw-bold">No search results</h4>
-            )}
-          </div>
-        )}
-      </header>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="container d-flex flex-row mt-5 gap-3 content pb-5">
+          {filteredIngredients.map((item) => (
+            <div
+              className="card-ingredients-list"
+              key={item.idIngredient}
+              onClick={() => handleIngredientClick(item)}
+            >
+              <img
+                src={`https://themealdb.com/images/ingredients/${item.strIngredient}.png`}
+                alt={item.strIngredient}
+              />
+              <div className="overlay-img"></div>
+              <span className="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-white text-center">
+                {item.strIngredient}
+              </span>
+            </div>
+          ))}
+          {filteredIngredients.length === 0 && (
+            <h4 className="fw-bold">No search results</h4>
+          )}
+        </div>
+      )}
     </div>
   );
 };

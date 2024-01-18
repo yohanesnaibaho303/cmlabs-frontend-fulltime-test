@@ -53,11 +53,14 @@ function MealsFilter() {
   );
 
   return (
-    <div>
-      <div className="px-3 header">
-        <div className="bread container d-flex flex-row mt-5 gap-2 breadcrumb pt-5">
+    <div className="bg-light min-vh-100">
+      <div className="header-02 w-100 pb-1 px-3">
+        <div
+          className="bread container d-flex flex-row gap-2 breadcrumb"
+          style={{ paddingTop: "96px" }}
+        >
           <span onClick={() => navigate(`/ingredients`)}>Ingredients</span>
-          <span>{" > "}</span>
+          <span className="fw-bold">{" // "}</span>
           <span
             className="fw-semibold"
             onClick={() => navigate(`/meals/${ingredients}`)}

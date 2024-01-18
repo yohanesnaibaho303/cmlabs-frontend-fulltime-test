@@ -1,3 +1,4 @@
+/* hero style */
 header {
   background-color: #ffffff;
   background-image: linear-gradient(
@@ -6,6 +7,15 @@ header {
     #6284ff 50%,
     #09ff007c 100%
   );
+}
+
+.header-02 {
+  background: #fff;
+  box-shadow: inset 0px 1px 87px -60px #6d6d6d;
+}
+
+.category {
+  background: linear-gradient(180deg, #09ff007c, #6284ff);
 }
 
 .homepage .header-box h1 {
@@ -66,11 +76,9 @@ header {
   }
 }
 
-.category {
-  background-color: #09ff007c;
-}
+/* end ofhero style */
 
-/* card */
+/* style card */
 .content {
   flex-wrap: wrap;
   justify-content: center;
@@ -125,10 +133,12 @@ header {
   cursor: pointer;
 }
 
+/* end of card */
+
 .search {
   width: 70%;
   height: 50px;
-  border: 1px solid #e7b10a;
+  border: 1px solid #b18c1d;
   border-radius: 20px;
   background-color: white;
 }

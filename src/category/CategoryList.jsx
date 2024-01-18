@@ -52,10 +52,10 @@ const CategoryList = () => {
   );
 
   return (
-    <div>
-      <div className="px-3 header pt-5 mt-5">
+    <div className="bg-light min-vh-100">
+      <div className="header-02 w-100 pb-1">
         <div className="container">
-          <h3 className="text-center fw-bold mt-2">
+          <h3 className="text-center fw-bold" style={{ paddingTop: "96px" }}>
             Foods with {categories} Ingredients
           </h3>
           <p className="fs-5 text-center">

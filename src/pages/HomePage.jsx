@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import { Col, Container, Row } from "react-bootstrap";
 import HeroImage from "/assets/hero.png";
 import "./pages.css";
+
 import Loader from "../components/Loader";
 import Category from "../category/Category";
 
@@ -41,9 +43,9 @@ const HomePage = () => {
                 Recipes With Us!
               </h1>
               <p className="mb-4">
-                Eating is one of life's great pleasures. Enjoying our favorite
-                foods can be a real pleasure and something that makes life truly
-                feel worthwhile.
+                Eating is one of life&lsquo;s great pleasures. Enjoying our
+                favorite foods can be a real pleasure and something that makes
+                life truly feel worthwhile.
               </p>
               <button
                 className="btn btn-outline-dark btn-lg rounded-1 mb-xs-0 mb-2"
