@@ -24,6 +24,10 @@ const HomePage = () => {
     fetchCategories();
   }, []);
 
+  const handleCategoryClick = (category) => {
+    navigate(`/category/${category.strCategory}`);
+  };
+
   return (
     <div className="homepage overflow-hidden">
       <header className="w-100 min-vh-100 d-flex align-items-center">
@@ -72,7 +76,7 @@ const HomePage = () => {
             <div
               className="card-ingredients"
               key={category.idCategory}
-              onClick={() => navigate(`/categories/${category.strCategory}`)}
+              onClick={() => handleCategoryClick(category)}
             >
               <img src={category.strCategoryThumb} alt={category.strCategory} />
               <div className="overlay-img"></div>
@@ -90,7 +94,7 @@ const HomePage = () => {
           <Col className="d-flex justify-content-center mt-5 mb-5">
             <button
               className="btn btn-success rounded-5 btn-lg"
-              onClick={() => navigate("/categories")}
+              onClick={() => navigate("/ingredients")}
             >
               See All Recipes {" > "}
             </button>

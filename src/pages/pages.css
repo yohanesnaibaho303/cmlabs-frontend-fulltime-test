@@ -102,6 +102,7 @@ header {
 
 .content .card-ingredients:hover {
   transform: scale(0.9);
+  cursor: pointer;
 }
 
 .content .card-ingredients-list {

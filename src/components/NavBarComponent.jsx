@@ -26,7 +26,7 @@ const NavBarComponent = () => {
       className={changeColor ? "color-active" : ""}
     >
       <Container>
-        <Navbar.Brand className="fw-3 fw-bold" href="#home">
+        <Navbar.Brand className="fw-3 fw-bold" href="/">
           Finest Meal App
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

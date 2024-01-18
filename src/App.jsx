@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import IngredientsPage from "./pages/IngredientsPage";
 import MealsFilter from "./meals-filter/MealsFilter";
 import DetailMeal from "./meals-detail/DetailMeal";
+import CategoryList from "./pages/CategoryList";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
 
         <Route path="/meals/:ingredients" element={<MealsFilter />} />
         <Route path="/meals/:ingredients/:meal" element={<DetailMeal />} />
+        <Route path="/category/:categories" element={<CategoryList />} />
       </Routes>
     </div>
   );

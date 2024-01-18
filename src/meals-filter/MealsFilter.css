@@ -24,3 +24,7 @@
   cursor: pointer;
   transform: scale(0.9);
 }
+
+.bread span {
+  cursor: pointer;
+}

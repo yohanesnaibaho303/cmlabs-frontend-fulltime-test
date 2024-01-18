@@ -2,11 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { useNavigate, useParams } from "react-router";
-import "./MealsFilter.css";
 
-function MealsFilter() {
+const CategoryList = () => {
   const navigate = useNavigate();
-  const { ingredients } = useParams();
+  const { categories } = useParams();
 
   const [meals, setMeals] = useState([]);
   const [searchMeal, setSearchMeal] = useState("");
@@ -18,7 +17,7 @@ function MealsFilter() {
           "https://www.themealdb.com/api/json/v1/1/filter.php",
           {
             params: {
-              i: ingredients,
+              c: categories,
             },
           }
         );
@@ -29,7 +28,7 @@ function MealsFilter() {
     };
 
     fetchData();
-  }, [ingredients]);
+  }, [categories]);
 
   const handleSearchChange = (e) => {
     setSearchMeal(e.target.value);
@@ -40,7 +39,7 @@ function MealsFilter() {
   };
 
   const handleMealClick = (item) => {
-    navigate(`/meals/${ingredients}/${item.idMeal}`);
+    navigate(`/meals/${categories}/${item.idMeal}`);
   };
 
   const filteredMeals = meals.filter((meal) =>
@@ -49,25 +48,14 @@ function MealsFilter() {
 
   return (
     <div>
-      <div className="px-3 header">
-        <div className="bread container d-flex flex-row mt-5 gap-2 breadcrumb pt-5">
-          <span onClick={() => navigate(`/ingredients`)}>Ingredients</span>
-          <span>{" > "}</span>
-          <span
-            className="fw-semibold"
-            onClick={() => navigate(`/meals/${ingredients}`)}
-          >
-            {ingredients}
-          </span>
-        </div>
-
+      <div className="px-3 header pt-5 mt-5">
         <div className="container">
           <h3 className="text-center fw-bold mt-2">
-            Foods with {ingredients} Ingredients
+            Foods with {categories} Ingredients
           </h3>
           <p className="fs-5 text-center">
             There are <span className="fw-bold">{filteredMeals.length}</span>{" "}
-            Meals with {ingredients} Ingredients
+            Meals with {categories} Ingredients
           </p>
         </div>
 
@@ -91,7 +79,7 @@ function MealsFilter() {
         </div>
       </div>
 
-      <div className="container d-flex flex-row mt-5 gap-3 content pb-5">
+      <div className="container d-flex flex-row mt-5 pb-5 gap-3 content">
         {filteredMeals.length > 0 ? (
           filteredMeals.map((item) => (
             <div
@@ -112,6 +100,6 @@ function MealsFilter() {
       </div>
     </div>
   );
-}
+};
 
-export default MealsFilter;
+export default CategoryList;

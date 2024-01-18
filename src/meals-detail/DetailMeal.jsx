@@ -47,8 +47,8 @@ function DetailMeal() {
   return (
     <div>
       <div className="px-3 header">
-        <div className="container d-flex flex-row mt-5 gap-2 breadcrumb pt-5">
-          <span onClick={() => navigate("/")}>Home</span>
+        <div className="bread container d-flex flex-row mt-5 gap-2 breadcrumb pt-5">
+          <span onClick={() => navigate(`/ingredients`)}>Ingredients</span>
           <span>{" > "}</span>
           <span onClick={() => navigate(`/meals/${ingredients}`)}>
             {ingredients}

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
-import { Row } from "react-bootstrap";
 import { Icon } from "@iconify/react";
 
 import "./pages.css";
@@ -85,7 +84,7 @@ const IngredientsPage = () => {
           </div>
         </div>
 
-        <div className="container d-flex flex-row mt-5 gap-3 content">
+        <div className="container d-flex flex-row mt-5 gap-3 content pb-5">
           {filteredIngredients.map((item) => (
             <div
               className="card-ingredients-list"
