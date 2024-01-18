@@ -2,15 +2,19 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import { Icon } from "@iconify/react";
+import Loader from "../components/Loader";
 
 import "./pages.css";
 
 const IngredientsPage = () => {
-  const [ingredients, setIngredients] = useState([]);
-  const [searchIngredients, setSearchIngredients] = useState("");
   const navigate = useNavigate();
 
+  const [ingredients, setIngredients] = useState([]);
+  const [searchIngredients, setSearchIngredients] = useState("");
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
+    setLoading(true);
     const fetchIngredients = async () => {
       try {
         const response = await axios.get(
@@ -22,8 +26,10 @@ const IngredientsPage = () => {
           }
         );
         setIngredients(response.data.meals || []);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching ingredients:", error);
+        setLoading(false);
       }
     };
 
@@ -84,27 +90,31 @@ const IngredientsPage = () => {
           </div>
         </div>
 
-        <div className="container d-flex flex-row mt-5 gap-3 content pb-5">
-          {filteredIngredients.map((item) => (
-            <div
-              className="card-ingredients-list"
-              key={item.idIngredient}
-              onClick={() => handleIngredientClick(item)}
-            >
-              <img
-                src={`https://themealdb.com/images/ingredients/${item.strIngredient}.png`}
-                alt={item.strIngredient}
-              />
-              <div className="overlay-img"></div>
-              <span className="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-white text-center">
-                {item.strIngredient}
-              </span>
-            </div>
-          ))}
-          {filteredIngredients.length === 0 && (
-            <h4 className="fw-bold">No search results</h4>
-          )}
-        </div>
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className="container d-flex flex-row mt-5 gap-3 content pb-5">
+            {filteredIngredients.map((item) => (
+              <div
+                className="card-ingredients-list"
+                key={item.idIngredient}
+                onClick={() => handleIngredientClick(item)}
+              >
+                <img
+                  src={`https://themealdb.com/images/ingredients/${item.strIngredient}.png`}
+                  alt={item.strIngredient}
+                />
+                <div className="overlay-img"></div>
+                <span className="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-white text-center">
+                  {item.strIngredient}
+                </span>
+              </div>
+            ))}
+            {filteredIngredients.length === 0 && (
+              <h4 className="fw-bold">No search results</h4>
+            )}
+          </div>
+        )}
       </header>
     </div>
   );

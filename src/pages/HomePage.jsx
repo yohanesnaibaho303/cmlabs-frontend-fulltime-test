@@ -4,29 +4,31 @@ import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import HeroImage from "/assets/hero.png";
 import "./pages.css";
+import Loader from "../components/Loader";
+import Category from "../category/Category";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
           "https://www.themealdb.com/api/json/v1/1/categories.php"
         );
         setCategories(response.data.categories || []);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching categories:", error);
+        setLoading(false);
       }
     };
 
     fetchCategories();
   }, []);
-
-  const handleCategoryClick = (category) => {
-    navigate(`/category/${category.strCategory}`);
-  };
 
   return (
     <div className="homepage overflow-hidden">
@@ -70,26 +72,7 @@ const HomePage = () => {
             </p>
           </Col>
         </Row>
-
-        <Row className="content d-flex flex-row mt-5 gap-3">
-          {categories.map((category) => (
-            <div
-              className="card-ingredients"
-              key={category.idCategory}
-              onClick={() => handleCategoryClick(category)}
-            >
-              <img src={category.strCategoryThumb} alt={category.strCategory} />
-              <div className="overlay-img"></div>
-              <span
-                style={{ textShadow: "1px 1px 1px #fff" }}
-                className="position-absolute top-50 start-50 translate-middle fw-bold fs-4 text-black text-center"
-              >
-                {category.strCategory}
-              </span>
-            </div>
-          ))}
-        </Row>
-
+        {loading ? <Loader /> : <Category categories={categories} />}
         <Row>
           <Col className="d-flex justify-content-center mt-5 mb-5">
             <button

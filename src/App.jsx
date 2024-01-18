@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import IngredientsPage from "./pages/IngredientsPage";
 import MealsFilter from "./meals-filter/MealsFilter";
 import DetailMeal from "./meals-detail/DetailMeal";
-import CategoryList from "./pages/CategoryList";
+import CategoryList from "./category/CategoryList";
 
 const App = () => {
   return (
