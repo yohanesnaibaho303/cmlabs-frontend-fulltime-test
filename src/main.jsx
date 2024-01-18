@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "animate.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

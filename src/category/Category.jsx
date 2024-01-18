@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Icon } from "@iconify/react";
 
 const SearchInput = ({ value, onChange, onClear }) => {

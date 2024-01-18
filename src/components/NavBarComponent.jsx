@@ -18,17 +18,13 @@ const NavBarComponent = () => {
     window.addEventListener("scroll", changeBackgroundColor);
   });
 
-  const handleDisabledLinkClick = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <Navbar
       expand="lg"
       fixed="top"
       className={changeColor ? "color-active" : ""}
     >
-      <Container>
+      <Container className="animate animated animate__backInDown">
         <Navbar.Brand className="fw-3 fw-bold" href="/">
           Finest Meal App
         </Navbar.Brand>

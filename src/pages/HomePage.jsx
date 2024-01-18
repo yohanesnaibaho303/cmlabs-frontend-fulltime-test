@@ -38,23 +38,26 @@ const HomePage = () => {
         <Container>
           <Row className="header-box d-flex align-items-center pt-lg-5">
             <Col lg="6">
-              <h1 className="mb-4">
+              <h1 className="mb-4 animate__animated animate__fadeInDown animate__faster">
                 Discover <br /> <span>The Greatest</span> <br />
                 Recipes With Us!
               </h1>
-              <p className="mb-4">
+              <p className="mb-4 animate__animated animate__fadeInLeft animate__fast">
                 Eating is one of life&lsquo;s great pleasures. Enjoying our
                 favorite foods can be a real pleasure and something that makes
                 life truly feel worthwhile.
               </p>
               <button
-                className="btn btn-outline-dark btn-lg rounded-1 mb-xs-0 mb-2"
+                className="btn btn-outline-dark btn-lg rounded-1 mb-xs-0 mb-2 animate__animated animate__fadeInUp animate__delay-1s"
                 onClick={() => navigate("/ingredients")}
               >
                 Find Recipes
               </button>
             </Col>
-            <Col lg="6" className="pt-lg-0 pt-5">
+            <Col
+              lg="6"
+              className="pt-lg-0 pt-5 animate__animated animate__fadeInRight animate__fast"
+            >
               <img
                 src={HeroImage}
                 alt="hero-img"
