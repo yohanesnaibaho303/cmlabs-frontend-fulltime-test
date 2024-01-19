@@ -9,9 +9,15 @@ header {
   );
 }
 
+.bg-content {
+  background: url("/assets/bg-interlaced.png");
+  height: 100vh vh;
+  width: 100%;
+}
+
 .header-02 {
   background: #fff;
-  box-shadow: inset 0px 1px 87px -60px #6d6d6d;
+  box-shadow: inset 0px -10px 87px -60px #6d6d6d;
 }
 
 .category {

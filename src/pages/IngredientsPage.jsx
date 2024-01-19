@@ -55,7 +55,7 @@ const IngredientsPage = () => {
   );
 
   return (
-    <div className="bg-light min-vh-100">
+    <div className="bg-content min-vh-100">
       <div className="header-02 w-100 pb-1 px-3">
         <div className="container">
           <h1 className="text-center fw-bold" style={{ paddingTop: "96px" }}>

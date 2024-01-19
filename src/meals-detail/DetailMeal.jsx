@@ -52,7 +52,7 @@ function DetailMeal() {
     keys.map((key) => obj[key]).filter(Boolean);
 
   return (
-    <div className="bg-light min-vh-100">
+    <div className="bg-content min-vh-100">
       <div className="header-02 w-100 pb-1 px-3">
         <div
           className="bread container d-flex flex-row gap-2 breadcrumb "
