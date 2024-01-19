@@ -35,3 +35,4 @@
     ```url
     http://localhost:5173/
     ```
+or visit the deployed website https://finest-meal.vercel.app
