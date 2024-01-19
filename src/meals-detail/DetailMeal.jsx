@@ -88,7 +88,11 @@ function DetailMeal() {
           <span className="fw-bold text-success mb-3">
             {detailMeals?.strArea} Culinary
           </span>
-          <img src={detailMeals?.strMealThumb} alt={detailMeals?.strMeal} />
+          {loading ? (
+            <Loader />
+          ) : (
+            <img src={detailMeals?.strMealThumb} alt={detailMeals?.strMeal} />
+          )}
           <h5 className="mt-3">Tags :</h5>
           <div className="d-flex flex-row gap-2">
             {detailMeals?.strTags?.split(",").map((value, index) => (
