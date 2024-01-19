@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const NavBarComponent = () => {
   const [changeColor, setChangecolor] = useState(false);
@@ -31,8 +32,12 @@ const NavBarComponent = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav className="fw-bold">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/ingredients">Ingredients</Nav.Link>
+            <Nav.Link as={NavLink} to={"/"}>
+              Home
+            </Nav.Link>
+            <Nav.Link as={NavLink} to={"/ingredients"}>
+              Ingredients
+            </Nav.Link>
             <Nav.Link>Foods</Nav.Link>
             <Nav.Link>Local Culinary</Nav.Link>
           </Nav>
